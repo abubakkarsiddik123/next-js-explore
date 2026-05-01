@@ -2,6 +2,13 @@ import Link from "next/link";
 import React, { use } from "react";
 
 
+import {Poppins } from 'next/font/google'
+ 
+
+const poppins = Poppins({
+  weight:'600',
+  subsets:["latin"]
+})
 
 export const metadata = {
   title: 'All Users',
@@ -13,7 +20,7 @@ const UsersPage = async () => {
   const users = await res.json();
 
   return (
-    <div className="container mx-auto">
+    <div className={`${poppins.className} container mx-auto`}>
       <h2>User are comming...</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {users.map((user) => (

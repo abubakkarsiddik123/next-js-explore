@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 
+
+
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
+
 const BlogsPage = () => {
 
    const blogs=[
@@ -47,7 +56,7 @@ const BlogsPage = () => {
 ]
 
     return (
-        <div>
+        <div className={roboto.className}>
             <h1 className='text-4xl text-center font-bold  mt-4'>Blogs</h1>
 
         {
